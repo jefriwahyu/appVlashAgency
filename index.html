@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Karyawan PT Vlash Agency</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+<div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0">
+    
+      <div class="flex justify-center">
+        <img class="w-40" src="../src/image/vlash111.png" alt="">
+      </div>
+
+      <div class="flex justify-center text-4xl font-bold mt-5">
+        Data Karyawan Vlash Agency
+      </div>
+    <div class="flex item-center ml-2 mt-10 justify-center">
+        <div class="mt-3">
+            <button type="button" onclick="getAllData()" class="text-white bg-green-600 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Tampilkan semua data</button>
+        </div>
+        <div class="mt-5 ml-5">
+          <label for="tw-modal" class="cursor-pointer text-white bg-green-600 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Form Tambah & Edit</label>
+        </div>
+    </div>
+        <div class="container mx-auto ">
+
+            <!-- <div class="flex justify-center items-center">
+                <div class=" justify-center grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+                  <ul role="list" class="justify-center list sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+                    
+                  </ul>
+                </div>
+              </div> -->
+              <br>
+              <br>
+              <div class="flex justify-center bg-slate-400">
+                <table class="w-full border-spacing-3">
+                  <!-- head -->
+                  <thead>
+                    <tr>
+                      <th class="w-36"></th>
+                      <th class="w-36"></th>
+                      <th class="w-20"></th>
+                      <th class="w-20"></th>
+                      <th class="w-20"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="list">
+                    <!-- row 1 -->
+                    
+                  </tbody> 
+                </table>
+              </div>          
+        </div>
+
+        <!-- MODAL 1 -->
+        <!-- FORM TAMBAH DAN EDIT  -->
+
+          <div class="collapse relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+            <input type="checkbox" id="tw-modal" class="peer fixed appearance-none opacity-0">
+
+            <label for="tw-modal" class="pointer-events-none invisible fixed inset-0 flex cursor-pointer items-center justify-center overflow-hidden overscroll-contain bg-slate-700/30 opacity-0 transition-all duration-200 ease-in-out peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100 peer-checked:[&>*]:translate-y-0 peer-checked:[&>*]:scale-100">
+              <label for="" class="max-h[calc(100vh - 5em)] h-fit max-w-lg scale-90 overflow-y-auto overscroll-contain rounded-md bg-white p-6 text-black shadow-2xl transition">
+                <div>
+                  <h3 class="text-2xl font-bold flex justify-center">FORM TAMBAH DATA & EDIT</h3>
+                </div>
+                <br>
+                <br>
+                  <form class="tambah-karyawan" id="form">
+                    <div hidden class="grid grid-cols-2 gap-4">
+                      <input type="hidden" id="id">
+                      <!--Nama depan input-->
+                      <div class="relative mb-6" data-te-input-wrapper-init>
+                        <label>Nama Depan</label>
+                        <input
+                          type="text"
+                          class="peer block min-h-[auto] w-full rounded border-0 bg-gray-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                          id="nama-depan"
+                          aria-describedby="emailHelp123"
+                          placeholder="Nama Depan" />
+                      </div>
+                
+                      <!--Nama belakang input-->
+                      <div class="relative mb-6" data-te-input-wrapper-init>
+                        <label>Nama Belakang</label>
+                        <br>
+                        <input
+                          type="text"
+                          class="peer block min-h-[auto] w-full rounded border-0 bg-gray-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                          id="nama-belakang"
+                          aria-describedby="emailHelp124"
+                          placeholder="Nama Belakang" />
+                      </div>
+                    </div>
+                
+                    <!--Email input-->
+                    <div class="relative mb-6" data-te-input-wrapper-init>
+                      <label>Email</label>
+                      <input
+                        type="email"
+                        class="peer block min-h-[auto] w-full rounded border-0 bg-gray-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                        id="email"
+                        placeholder="Email" />
+                    </div>
+                
+                    <!--Submit button-->
+                    <button
+                      onclick="addData(); addDataNow(); clearText();"
+                      type="submit"
+                      class="inline-block w-full rounded-md text-white bg-green-600 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900"
+                      data-te-ripple-init
+                      data-te-ripple-color="light-blue">
+                      Tambah
+                    </button>
+                    <br>
+                    <br>
+                    <button
+                    onclick="saveData(); clearText();"
+                    type="submit"
+                    class="inline-block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    data-te-ripple-init
+                    data-te-ripple-color="light-blue">
+                    Simpan
+                  </button>
+                  </form>
+                  <br>
+                  <br>
+                  <div>
+                    <h3 class="text-2xl font-bold flex justify-center">Catatan : Klik tombol tambah untuk menambah, gunakan tombol simpan setelah anda klik edit.</h3>
+                  </div>
+              </label>
+          </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
